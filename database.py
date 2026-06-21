@@ -15,10 +15,10 @@ def create_user(username, email, password, initial_balance):
             session.add(new_user)
             session.commit()
 db = scoped_session(sessionlocal)
-def create_transtacion(type, amount, category, description, date):
+def create_transtacion(type, amount, category, description, date, payment_method):
     with sessionlocal() as session:
         with session.begin:
-            new_transaction = Transactions(type=type, amount=amount, category=category, description=description, date=date)
+            new_transaction = Transactions(type=type, amount=amount, category=category, description=description, date=date, payment_method=payment_method)
             session.add(new_transaction)
             session.commit()
 def result():
